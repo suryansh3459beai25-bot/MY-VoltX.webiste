@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View your VoltX shopping cart and complete your purchase.">
+    <title>VoltX | Shopping Cart</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main Navigation">
+            <div class="nav-brand">
+                <a href="./index.html"><span class="bolt">&#9889;</span>VoltX</a>
+            </div>
+
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+                    <span class="theme-icon sun-icon">&#9728;</span>
+                    <span class="theme-icon moon-icon">&#9789;</span>
+                </button>
+
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./cart.html" class="active" aria-current="page">Cart</a></li>
+                <li><a href="./signup.html">Sign Up</a></li>
+                <li><a href="./signin.html">Sign In</a></li>
+                <li><a href="./logout.html">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="nav-backdrop" id="navBackdrop"></div>
+    </header>
+
+    <main class="cart-main">
+        <div class="cart-container">
+            <header class="cart-header">
+                <span class="cart-eyebrow">YOUR BAG</span>
+                <h1>Shopping Cart</h1>
+            </header>
+
+            <div class="cart-layout">
+                <!-- Cart Items List -->
+                <section class="cart-items" aria-label="Cart Items">
+                    
+                    <article class="cart-item">
+                        <div class="item-image">
+                            <img src="photos/mobile.jpg" alt="Apex Pro Smartphone">
+                        </div>
+                        <div class="item-details">
+                            <h3>Apex Pro Smartphone</h3>
+                            <p class="item-meta">Color: Midnight Black | Storage: 256GB</p>
+                            <span class="item-price">Rs 1,799.99</span>
+                        </div>
+                        <div class="item-actions">
+                            <div class="quantity-control">
+                                <button type="button" aria-label="Decrease quantity">-</button>
+                                <span>1</span>
+                                <button type="button" aria-label="Increase quantity">+</button>
+                            </div>
+                            <button type="button" class="remove-btn" aria-label="Remove Apex Pro Smartphone from cart">&times;</button>
+                        </div>
+                    </article>
+
+                    <article class="cart-item">
+                        <div class="item-image">
+                            <img src="photos/headphoes.jpg" alt="SonicX Wireless Headphones">
+                        </div>
+                        <div class="item-details">
+                            <h3>SonicX Wireless Headphones</h3>
+                            <p class="item-meta">Color: Matte Black</p>
+                            <span class="item-price">Rs 999.00</span>
+                        </div>
+                        <div class="item-actions">
+                            <div class="quantity-control">
+                                <button type="button" aria-label="Decrease quantity">-</button>
+                                <span>1</span>
+                                <button type="button" aria-label="Increase quantity">+</button>
+                            </div>
+                            <button type="button" class="remove-btn" aria-label="Remove SonicX Wireless Headphones from cart">&times;</button>
+                        </div>
+                    </article>
+
+                </section>
+
+                <!-- Summary Panel -->
+                <aside class="cart-summary" aria-label="Order Summary">
+                    <h2>Order Summary</h2>
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>Rs 2,798.99</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Estimated Shipping</span>
+                        <span class="text-teal">FREE</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Estimated Tax</span>
+                        <span>Rs 140.00</span>
+                    </div>
+
+                    <div class="promo-box">
+                        <input type="text" placeholder="Promo code" aria-label="Promo code">
+                        <button type="button">Apply</button>
+                    </div>
+
+                    <div class="summary-row total-row">
+                        <span>Total</span>
+                        <span>Rs 2,938.99</span>
+                    </div>
+
+                    <button class="checkout-btn">
+                        Proceed to Checkout <span class="cta-arrow">&rarr;</span>
+                    </button>
+
+                    <a href="./index.html#products" class="continue-shopping">&larr; Continue Shopping</a>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand"><span class="bolt">&#9889;</span>VoltX</div>
+            <p>&copy; 2026 VoltX. All rights reserved.</p>
+            <nav aria-label="Footer Navigation">
+                <ul class="footer-links">
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                    <li><a href="./privacy.html">Privacy Policy</a></li>
+                    <li><a href="./terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navBackdrop = document.getElementById('navBackdrop');
+        const themeToggle = document.getElementById('themeToggle');
+        const root = document.documentElement;
+
+        const savedTheme = localStorage.getItem('voltx-theme');
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+            root.setAttribute('data-theme', 'light');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isLight = root.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                root.removeAttribute('data-theme');
+                localStorage.setItem('voltx-theme', 'dark');
+            } else {
+                root.setAttribute('data-theme', 'light');
+                localStorage.setItem('voltx-theme', 'light');
+            }
+        });
+
+        function setMenu(isOpen) {
+            navLinks.classList.toggle('open', isOpen);
+            navToggle.classList.toggle('active', isOpen);
+            navBackdrop.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+        navBackdrop.addEventListener('click', () => setMenu(false));
+        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+    </script>
+</body>
+</html>

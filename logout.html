@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="VoltX Logout">
+
+    <title>VoltX | Logout</title>
+
+    <style>
+
+        /* =========================================
+           VoltX Theme
+           ========================================= */
+
+        :root {
+            --void: #0a0908;
+            --surface: #16130f;
+            --surface-raised: #1e1a14;
+            --border: #2c2620;
+
+            --orange: #ff6b1a;
+            --amber: #ffb84d;
+            --teal: #00e5c7;
+            --pink: #ff3d81;
+
+            --text: #f5f0e8;
+            --text-muted: #a89f92;
+
+            --font-display: 'Rajdhani', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+
+        /* =========================================
+           Light Theme
+           ========================================= */
+
+        :root[data-theme="light"] {
+            --void: #faf7f2;
+            --surface: #ffffff;
+            --surface-raised: #f2ede3;
+            --border: #e4ddd0;
+
+            --text: #1a1512;
+            --text-muted: #6b6258;
+        }
+
+
+        /* =========================================
+           Reset
+           ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+            width: 100%;
+            min-width: 320px;
+            overflow-x: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            font-family: var(--font-body);
+
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(255, 107, 26, 0.12),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(0, 229, 199, 0.08),
+                    transparent 35%
+                ),
+                var(--void);
+        }
+
+
+        /* =========================================
+           Main Card
+           ========================================= */
+
+        .logout-card {
+
+            width: 100%;
+
+            max-width: 460px;
+
+            padding: 3rem 2.5rem;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--surface-raised),
+                    var(--surface)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.45),
+                0 0 35px rgba(255, 107, 26, 0.08);
+
+            animation: cardEnter 0.6s ease;
+        }
+
+
+        /* =========================================
+           Logo
+           ========================================= */
+
+        .logo {
+
+            font-family: var(--font-display);
+
+            font-size: 2rem;
+
+            font-weight: 700;
+
+            letter-spacing: 0.04em;
+
+            margin-bottom: 2rem;
+        }
+
+
+        .bolt {
+
+            color: var(--orange);
+
+            filter:
+                drop-shadow(
+                    0 0 8px rgba(255, 107, 26, 0.7)
+                );
+        }
+
+
+        /* =========================================
+           Logout Icon
+           ========================================= */
+
+        .logout-icon {
+
+            width: 72px;
+
+            height: 72px;
+
+            margin: 0 auto 1.5rem;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            border: 1px solid var(--border);
+
+            background: var(--surface);
+
+            color: var(--orange);
+
+            font-size: 2rem;
+
+            box-shadow:
+                0 0 25px rgba(255, 107, 26, 0.15);
+
+            animation:
+                iconPulse 2s ease-in-out infinite;
+        }
+
+
+        h1 {
+
+            font-family: var(--font-display);
+
+            font-size: 2rem;
+
+            margin-bottom: 0.75rem;
+        }
+
+
+        .description {
+
+            color: var(--text-muted);
+
+            line-height: 1.6;
+
+            margin-bottom: 2rem;
+        }
+
+
+        /* =========================================
+           Buttons
+           ========================================= */
+
+        .buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 1rem;
+        }
+
+
+        .btn {
+
+            min-width: 130px;
+
+            padding: 0.75rem 1.5rem;
+
+            border-radius: 999px;
+
+            font-family: var(--font-display);
+
+            font-size: 1rem;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .btn:hover {
+
+            transform: translateY(-2px);
+        }
+
+
+        /* Cancel */
+
+        .cancel-btn {
+
+            color: var(--text);
+
+            background: transparent;
+
+            border: 1px solid var(--border);
+        }
+
+
+        .cancel-btn:hover {
+
+            border-color: var(--teal);
+
+            color: var(--teal);
+        }
+
+
+        /* Logout */
+
+        .logout-btn {
+
+            color: var(--void);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--orange),
+                    var(--amber)
+                );
+
+            border: none;
+
+            box-shadow:
+                0 8px 25px rgba(255, 107, 26, 0.25);
+        }
+
+
+        .logout-btn:hover {
+
+            box-shadow:
+                0 12px 32px rgba(255, 107, 26, 0.45);
+        }
+
+
+        /* =========================================
+           Confirmation Modal
+           ========================================= */
+
+        .confirm-check {
+
+            display: none;
+        }
+
+
+        .confirmation {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 1000;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            background:
+                rgba(0, 0, 0, 0.72);
+
+            backdrop-filter: blur(8px);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+        }
+
+
+        /* Show modal when checkbox is checked */
+
+        .confirm-check:checked ~ .confirmation {
+
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        .confirmation-box {
+
+            width: 100%;
+
+            max-width: 400px;
+
+            padding: 2rem;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--surface-raised),
+                    var(--surface)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.55);
+
+            transform: scale(0.92);
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        .confirm-check:checked
+        ~ .confirmation
+        .confirmation-box {
+
+            transform: scale(1);
+        }
+
+
+        .confirmation-box h2 {
+
+            font-family: var(--font-display);
+
+            font-size: 1.6rem;
+
+            margin-bottom: 0.7rem;
+        }
+
+
+        .confirmation-box p {
+
+            color: var(--text-muted);
+
+            line-height: 1.5;
+
+            margin-bottom: 1.5rem;
+        }
+
+
+        .confirm-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 1rem;
+        }
+
+
+        .yes-btn {
+
+            display: inline-block;
+
+            padding: 0.7rem 1.4rem;
+
+            border-radius: 999px;
+
+            text-decoration: none;
+
+            font-family: var(--font-display);
+
+            font-weight: 700;
+
+            color: var(--void);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--orange),
+                    var(--amber)
+                );
+        }
+
+
+        .no-btn {
+
+            padding: 0.7rem 1.4rem;
+
+            border-radius: 999px;
+
+            font-family: var(--font-display);
+
+            font-weight: 700;
+
+            color: var(--text);
+
+            background: transparent;
+
+            border: 1px solid var(--border);
+
+            cursor: pointer;
+        }
+
+
+        .no-btn:hover {
+
+            color: var(--teal);
+
+            border-color: var(--teal);
+        }
+
+
+        /* =========================================
+           Success Message
+           ========================================= */
+
+        .success {
+
+            position: fixed;
+
+            top: 30px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%)
+                translateY(-30px);
+
+            z-index: 2000;
+
+            padding: 0.9rem 1.5rem;
+
+            border-radius: 999px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--teal),
+                    #00b89f
+                );
+
+            color: var(--void);
+
+            font-family: var(--font-display);
+
+            font-weight: 700;
+
+            box-shadow:
+                0 10px 30px rgba(0, 229, 199, 0.3);
+
+            opacity: 0;
+
+            pointer-events: none;
+        }
+
+
+        /*
+           This success message is available
+           visually on the logout page.
+
+           Pure CSS cannot carry this state
+           across the redirect to index.html.
+        */
+
+
+        /* =========================================
+           Small Text
+           ========================================= */
+
+        .security-text {
+
+            margin-top: 1.75rem;
+
+            font-size: 0.72rem;
+
+            letter-spacing: 0.12em;
+
+            color: var(--text-muted);
+        }
+
+
+        /* =========================================
+           Animations
+           ========================================= */
+
+        @keyframes cardEnter {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px)
+                    scale(0.97);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        @keyframes iconPulse {
+
+            0%,
+            100% {
+
+                box-shadow:
+                    0 0 15px
+                    rgba(255, 107, 26, 0.12);
+            }
+
+            50% {
+
+                box-shadow:
+                    0 0 30px
+                    rgba(255, 107, 26, 0.28);
+            }
+        }
+
+
+        /* =========================================
+           Mobile
+           ========================================= */
+
+        @media (max-width: 500px) {
+
+            .logout-card {
+
+                padding: 2.5rem 1.5rem;
+            }
+
+
+            h1 {
+
+                font-size: 1.7rem;
+            }
+
+
+            .buttons,
+            .confirm-buttons {
+
+                flex-direction: column;
+            }
+
+
+            .btn,
+            .yes-btn,
+            .no-btn {
+
+                width: 100%;
+
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         Logout Card
+         ========================================= -->
+
+    <main class="logout-card">
+
+        <div class="logo">
+            <span class="bolt">&#9889;</span>VoltX
+        </div>
+
+
+        <div class="logout-icon">
+            &#10132;
+        </div>
+
+
+        <h1>Logout</h1>
+
+
+        <p class="description">
+            Are you sure you want to logout from
+            your VoltX account?
+        </p>
+
+
+        <div class="buttons">
+
+            <!-- Go back without logging out -->
+
+            <a
+                href="./index.html"
+                class="btn cancel-btn">
+
+                Cancel
+
+            </a>
+
+
+            <!-- Open CSS confirmation -->
+
+            <label
+                for="confirmLogout"
+                class="btn logout-btn">
+
+                Logout
+
+            </label>
+
+        </div>
+
+
+        <p class="security-text">
+            VOLTX • SECURE SESSION
+        </p>
+
+    </main>
+
+
+
+    <!-- =========================================
+         CSS-Only Confirmation
+         ========================================= -->
+
+    <input
+        type="checkbox"
+        id="confirmLogout"
+        class="confirm-check">
+
+
+    <div class="confirmation">
+
+        <div class="confirmation-box">
+
+            <h2>Confirm Logout</h2>
+
+            <p>
+                Do you really want to end your
+                current VoltX session?
+            </p>
+
+
+            <div class="confirm-buttons">
+
+                <!--
+                    This returns to Home after
+                    confirmation.
+                -->
+
+                <a
+                    href="./index.html#logout-success"
+                    class="yes-btn">
+
+                    Yes, Logout
+
+                </a>
+
+
+                <!-- Close confirmation -->
+
+                <label
+                    for="confirmLogout"
+                    class="no-btn">
+
+                    Cancel
+
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

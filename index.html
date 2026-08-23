@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VoltX - Your premier destination for cutting-edge electronic devices, gadgets, and accessories.">
+    <title>VoltX | Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<span id="logout-success"></span>
+
+<div class="logout-alert">
+    ✓ You have been logged out successfully.
+</div>
+<!-- VoltX Loading Screen -->
+<div class="voltx-loader" aria-label="Loading VoltX" role="status">
+    <div class="loader-logo">
+        <span class="loader-bolt">&#9889;</span>VoltX
+    </div>
+
+    <div class="loader-track">
+        <span class="loader-progress"></span>
+    </div>
+
+    <span class="loader-text">POWERING UP...</span>
+</div>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main Navigation">
+            <div class="nav-brand">
+                <a href="./index.html"><span class="bolt">&#9889;</span>VoltX</a>
+            </div>
+
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+                    <span class="theme-icon sun-icon">&#9728;</span>
+                    <span class="theme-icon moon-icon">&#9789;</span>
+                </button>
+
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="./index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./cart.html">Cart</a></li>
+                <li><a href="./signup.html">Sign Up</a></li>
+                <li><a href="./signin.html">Sign In</a></li>
+                <li><a href="./index.html#logout-success" class="yes-btn">
+    Logout
+</a></li>
+            </ul>
+        </nav>
+        <div class="nav-backdrop" id="navBackdrop"></div>
+    </header>
+
+    <main>
+
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-floating-images left-images">
+                <div class="floating-item zoom-anim">
+                    <img src="https://i.guim.co.uk/img/media/f56137281ee98c1f1d2b8b4d17238792668d6326/0_139_1524_1219/master/1524.jpg?width=445&dpr=1&s=none&crop=none" alt="Electronic device preview">
+                </div>
+                <div class="floating-item zoom-anim delay-1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTrKfirfmAHW1s90I8Kncet8pxcId5Owb3Rw&s" alt="Electronic device preview">
+                </div>
+            </div>
+
+            <div class="hero-content">
+                <span class="hero-eyebrow">POWERED UP &bull; NEW ARRIVALS</span>
+                <h1 id="hero-title">Next-Gen Electronics<br>at Your <span class="text-glow">Fingertips</span></h1>
+                <p>Discover the latest smartphones, laptops, smart home gear, and accessories with unbeatable deals.</p>
+                <a href="#products" class="cta-button">Shop Now <span class="cta-arrow">&rarr;</span></a>
+            </div>
+
+            <div class="hero-floating-images right-images">
+                <div class="floating-item zoom-anim delay-2">
+                    <img src="https://t3.ftcdn.net/jpg/05/54/32/86/360_F_554328616_IMhVmNVspLXCNJD5eatGTQqH9tPbYAcM.jpg" alt="Electronic device preview">
+                </div>
+                <div class="floating-item zoom-anim delay-3">
+                    <img src="https://cdn.freepixel.com/thumb/free-photos-a-pair-of-vibrant-color-headphones-placed-on-top-of-a-psychedelic-rainbow-colored-background-that-re-th-1004104352.jpg" alt="Electronic device preview">
+                </div>
+            </div>
+        </section>
+
+        <div class="current-line" aria-hidden="true"><span class="pulse-dot"></span></div>
+
+        <div class="content-wrapper">
+
+            <section id="products" class="products-section" aria-labelledby="section-title">
+                <header class="section-header reveal">
+                    <span class="section-tag">01 / CATALOG</span>
+                    <h2 id="section-title">Featured Devices</h2>
+                    <p>Handpicked technology crafted for performance and reliability.</p>
+                </header>
+
+                <div class="product-grid">
+
+                    <article class="product-card reveal">
+                        <figure class="product-image-container">
+                            <span class="product-badge badge-teal">Best Seller</span>
+                            <img src="photos/mobile.jpg" alt="Sleek modern smartphone displaying vibrant applications on screen">
+                            <figcaption class="sr-only">Apex Pro Smartphone</figcaption>
+                        </figure>
+                        <div class="product-info">
+                            <h3>Apex Pro Smartphone</h3>
+                            <p class="price">Rs 1799.99</p>
+                            <button class="buy-btn">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card reveal">
+                        <figure class="product-image-container">
+                            <span class="product-badge badge-pink">Top Rated</span>
+                            <img src="photos/laptop.jpg" alt="High-performance laptop open on a clean wooden desk surface">
+                            <figcaption class="sr-only">Zenith Ultra Laptop</figcaption>
+                        </figure>
+                        <div class="product-info">
+                            <h3>Zenith Ultra Laptop</h3>
+                            <p class="price">Rs 70,299.99</p>
+                            <button class="buy-btn">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card reveal">
+                        <figure class="product-image-container">
+                            <img src="photos/headphoes.jpg" alt="Over-ear wireless studio headphones resting on a minimalist stand">
+                            <figcaption class="sr-only">SonicX Wireless Headphones</figcaption>
+                        </figure>
+                        <div class="product-info">
+                            <h3>SonicX Wireless Headphones</h3>
+                            <p class="price">Rs 999.00</p>
+                            <button class="buy-btn">Add to Cart</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card reveal">
+                        <figure class="product-image-container">
+                            <span class="product-badge badge-amber">New</span>
+                            <img src="photos/watch.jpg" alt="Smartwatch with a black fitness tracking band on a white background">
+                            <figcaption class="sr-only">Pulse Smartwatch Series 5</figcaption>
+                        </figure>
+                        <div class="product-info">
+                            <h3>Pulse Smartwatch Series 5</h3>
+                            <p class="price">Rs 5449.99</p>
+                            <button class="buy-btn">Add to Cart</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="current-line" aria-hidden="true"><span class="pulse-dot"></span></div>
+
+            <aside class="promo-sidebar reveal" aria-label="Promotional Sidebar">
+                <section class="promo-card">
+                    <span class="section-tag">MEMBER PERK</span>
+                    <h3>Sign up today and get an extra <span class="text-glow">15% off</span> your first hardware order!</h3>
+                    <a href="./signup.html" class="promo-btn">Join Now <span class="cta-arrow">&rarr;</span></a>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand"><span class="bolt">&#9889;</span>VoltX</div>
+            <p>&copy; 2026 VoltX. All rights reserved.</p>
+            <nav aria-label="Footer Navigation">
+                <ul class="footer-links">
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                    <li><a href="./privacy.html">Privacy Policy</a></li>
+                    <li><a href="./terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navBackdrop = document.getElementById('navBackdrop');
+        const themeToggle = document.getElementById('themeToggle');
+        const root = document.documentElement;
+
+        // Apply saved theme, or fall back to the visitor's OS preference
+        const savedTheme = localStorage.getItem('voltx-theme');
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+            root.setAttribute('data-theme', 'light');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isLight = root.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                root.removeAttribute('data-theme');
+                localStorage.setItem('voltx-theme', 'dark');
+            } else {
+                root.setAttribute('data-theme', 'light');
+                localStorage.setItem('voltx-theme', 'light');
+            }
+        });
+
+        function setMenu(isOpen) {
+            navLinks.classList.toggle('open', isOpen);
+            navToggle.classList.toggle('active', isOpen);
+            navBackdrop.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+        navBackdrop.addEventListener('click', () => setMenu(false));
+        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+
+        // Scroll-triggered reveal: elements expand + fade in as they enter view
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 60);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        revealEls.forEach(el => observer.observe(el));
+
+        // Reveal product cards with a slight stagger based on grid position
+        document.querySelectorAll('.product-card').forEach((card, i) => {
+            card.style.transitionDelay = (i * 80) + 'ms';
+        });
+    </script>
+
+</body>
+</html>
